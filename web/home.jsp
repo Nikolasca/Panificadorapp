@@ -16,9 +16,9 @@
                     <ul>
                         <li><a href="empleado.jsp">Registrar producto</a></li>
                         <li><a href="/Panificadorapp/catalogo">Catalogo</a></li>
-                        <li><a href="#">Venta Nicolas</a></li>
+                        <li><a href="#"></a></li>
                         <li><a href="#">Perfíl</a></li>
-                        <li><a href="/Panificadorapp/empleado.jsp">Registrar Producto</a></li>
+                       
                     </ul>
 
                 </nav>

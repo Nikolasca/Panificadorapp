@@ -12,15 +12,15 @@ package Modelos;
 public class Producto {
     private int Idproducto;
     private String Nombreproducto;
-    private int Precio_Mayorista;
-    private int Precio_Minorista;
+    private int Preciomayorista;
+    private int Preciominorista;
     private int IdMarca;
     private String Nmarca;
 
     public Producto(String NombreProducto, int Precio_Mayorista, int Precio_Minorista, int IdMarca) {
         this.Nombreproducto = NombreProducto;
-        this.Precio_Mayorista = Precio_Mayorista;
-        this.Precio_Minorista = Precio_Minorista;
+        this.Preciomayorista = Precio_Mayorista;
+        this.Preciominorista = Precio_Minorista;
         this.IdMarca = IdMarca;
     }
 public Producto (int id){
@@ -50,20 +50,20 @@ this.Idproducto = id;
         this.Nombreproducto = NombreProducto;
     }
 
-    public int getPrecio_Mayorista() {
-        return Precio_Mayorista;
+    public int getPreciomayorista() {
+        return Preciomayorista;
     }
 
-    public void setPrecio_Mayorista(int Precio_Mayorista) {
-        this.Precio_Mayorista = Precio_Mayorista;
+    public void setPreciomayorista(int Preciomayorista) {
+        this.Preciomayorista = Preciomayorista;
     }
 
-    public int getPrecio_Minorista() {
-        return Precio_Minorista;
+    public int getPreciominorista() {
+        return Preciominorista;
     }
 
-    public void setPrecio_Minorista(int Precio_Minorista) {
-        this.Precio_Minorista = Precio_Minorista;
+    public void setPreciominorista(int Preciominorista) {
+        this.Preciominorista = Preciominorista;
     }
 
     public int getIdMarca() {

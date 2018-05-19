@@ -22,8 +22,8 @@ and open the template in the editor.
             </div>
             <p>${message}</p>
             <div class="formulario">
-                <h1>Registrar producto</h1>
-                <form method="post" class="form" action="admin">
+                <h1>Iniciar sesión Empleado</h1>
+                <form action = "LogIn" method="get" class="form">
                     <input type="text" class="campos" name="username" placeholder="Usuario"/>
                     <input type="text" class="campos" name="password" placeholder="Contraseña"/>
                     <input type="submit" id="boton1" value="Log in" class="btn"/>

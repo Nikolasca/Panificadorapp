@@ -66,6 +66,8 @@ public class productoDao {
                 produ = new Producto(rs.getInt("idproducto"));
                 produ.setNombreProducto(rs.getString("nombreProducto"));
                 produ.setNmarca(rs.getString("nombreMarca"));
+                produ.setPreciominorista(rs.getInt("preciominorista"));
+                produ.setPreciomayorista(rs.getInt("preciomayorista"));
                 
 
                 list.add(produ);
