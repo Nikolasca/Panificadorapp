@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LogIn</servlet-name>
+        <servlet-class>Servlets.LogIn</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignUpEmpleado</servlet-name>
+        <servlet-class>Servlets.SignUpCliente</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>catalogoController</servlet-name>
+        <servlet-class>Servlets.catalogoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogIn</servlet-name>
+        <url-pattern>/LogIn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignUpEmpleado</servlet-name>
+        <url-pattern>/SignUpEmpleado</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>productoController</servlet-name>
+        <servlet-class>Servlets.productoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productoController</servlet-name>
+        <url-pattern>/productoController</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>catalogoController</servlet-name>
+        <url-pattern>/catalogo</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
