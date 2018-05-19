@@ -5,8 +5,13 @@
  */
 package Servlets;
 
+import Modelos.Producto;
+import SQL.DbConnection;
+import SQL.productoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,19 +39,18 @@ public class ProductDetail extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             
             String Nombre = request.getParameter("nombrep");
-             String Marca = request.getParameter("marcap");
-              String ID = request.getParameter("idp");
-               String preciomin = request.getParameter("preciomin");
-                String preciomay = request.getParameter("preciomay");
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProductDetail</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Nombre: " +Nombre+ Marca +ID + preciomin+"----" + preciomay+  "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String Marca = request.getParameter("marcap");
+            int ID = Integer.parseInt(request.getParameter("idp"));
+            int preciomin = Integer.parseInt(request.getParameter("preciomin"));
+            int preciomay = Integer.parseInt(request.getParameter("preciomay"));
+                Producto producto = new Producto(ID,Nombre,preciomay,preciomin,Marca);
+            RequestDispatcher rd;
+        DbConnection conn = new DbConnection();
+       
+        conn.disconnect();
+        request.setAttribute("producto",producto );
+        rd = request.getRequestDispatcher("/detalles.jsp");
+        rd.forward(request, response);
         }
     }
 

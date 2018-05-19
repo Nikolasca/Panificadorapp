@@ -16,6 +16,8 @@ import java.sql.PreparedStatement;
 public class Cliente extends Usuario {
    private int IdPersonaContacto;
    private boolean Estado;
+   private String Nombre;
+   private String Telefono;
 
     public Cliente(String Nombre,  String Telefono,String Email, String CC, int idpersonacontacto) {
         super(Nombre, Telefono, CC,Email);
@@ -23,10 +25,35 @@ public class Cliente extends Usuario {
         
     }
 
-    public Cliente(String Nombre, String Telefono) {
-        super(Nombre, Telefono);
+    public Cliente(int IdPersonaContacto, boolean Estado, String Nombre, String Telefono) {
+        this.IdPersonaContacto = IdPersonaContacto;
+        this.Estado = Estado;
+        this.Nombre = Nombre;
+        this.Telefono = Telefono;
     }
 
+    public Cliente(String Nombre, String Telefono) {
+        this.Nombre = Nombre;
+        this.Telefono = Telefono;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+   
     
     public void AñadirCliente(Cliente cliente) {
         Conexion con = new Conexion();

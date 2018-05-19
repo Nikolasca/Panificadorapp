@@ -17,9 +17,51 @@ import java.sql.ResultSet;
 public class PersonaContacto extends Usuario {
    private int IdPersonaContacto;
    private boolean estado;
+   private String Nombre;
+   private String Telefono;
+   private String Email;
+   private String Cc;
     public PersonaContacto(String Nombre,  String Telefono, String Email, String CC) {
-        super(Nombre, Telefono, Email, CC);
+        super();
+        this.Nombre = Nombre;
+        this.Telefono = Telefono;
+        this.Email = Email;
+        this.Cc = CC;
     }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getCc() {
+        return Cc;
+    }
+
+    public void setCc(String Cc) {
+        this.Cc = Cc;
+    }
+    
+    
 public void AñadirPersonaContacto(PersonaContacto cliente) {
         Conexion con = new Conexion();
         Connection cn = con.conectar();
@@ -28,7 +70,7 @@ public void AñadirPersonaContacto(PersonaContacto cliente) {
             pre.setString(1, cliente.getNombre());
             pre.setString(2, cliente.getEmail());
             pre.setString(3, cliente.getTelefono());
-            pre.setString(4, cliente.getCC());
+            pre.setString(4, cliente.getCc());
             pre.executeUpdate();
             cliente.setEstado(true);
         } catch (Exception e) {

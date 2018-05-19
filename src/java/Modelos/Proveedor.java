@@ -13,7 +13,7 @@ public class Proveedor extends Usuario {
   private int IdProveedor;
   private int IdPersonaContacto;
     public Proveedor(String Nombre, int idproveedor, int idpersonacontacto) {
-        super(Nombre);
+        super();
         IdProveedor = idproveedor;
         IdPersonaContacto =  idpersonacontacto;
     }

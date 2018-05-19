@@ -14,9 +14,9 @@ import java.sql.SQLException;
  * @author nicolasmoreno
  */
 public class DbConnection {
-    static String bd="panificadorapp";
+    static String bd="panificadora";
     static String login="root";
-    static String password="root1234";
+    static String password="root";
     static String url="jdbc:mysql://localhost/" + bd;
     
     Connection conn=null;

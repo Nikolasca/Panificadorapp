@@ -23,7 +23,7 @@ and open the template in the editor.
             <p>${message}</p>
             <div class="formulario">
                 <h1>Iniciar sesión Empleado</h1>
-                <form action = "LogIn" method="get" class="form">
+                <form action = "admin" method="post" class="form">
                     <input type="text" class="campos" name="username" placeholder="Usuario"/>
                     <input type="text" class="campos" name="password" placeholder="Contraseña"/>
                     <input type="submit" id="boton1" value="Log in" class="btn"/>
