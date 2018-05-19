@@ -10,12 +10,12 @@ package Modelos;
  * @author Nikolas
  */
 public class Producto {
-    private int IdProducto;
+    private int Idproducto;
     private String Nombreproducto;
     private int Precio_Mayorista;
     private int Precio_Minorista;
     private int IdMarca;
-    private String nMarca;
+    private String Nmarca;
 
     public Producto(String NombreProducto, int Precio_Mayorista, int Precio_Minorista, int IdMarca) {
         this.Nombreproducto = NombreProducto;
@@ -24,22 +24,22 @@ public class Producto {
         this.IdMarca = IdMarca;
     }
 public Producto (int id){
-this.IdProducto = id;
+this.Idproducto = id;
 }
-    public String getnMarca() {
-        return nMarca;
+    public String getNmarca() {
+        return Nmarca;
     }
 
-    public void setnMarca(String nMarca) {
-        this.nMarca = nMarca;
+    public void setNmarca(String nMarca) {
+        this.Nmarca = nMarca;
     }
 
-    public int getIdProducto() {
-        return IdProducto;
+    public int getIdproducto() {
+        return Idproducto;
     }
 
-    public void setIdProducto(int IdProducto) {
-        this.IdProducto = IdProducto;
+    public void setIdproducto(int Idproducto) {
+        this.Idproducto = Idproducto;
     }
 
     public String getNombreproducto() {

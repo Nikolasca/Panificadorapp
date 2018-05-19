@@ -45,7 +45,7 @@ public class productoController extends HttpServlet {
             pr.setPrecio_Minorista(precioMinParam);
             pr.setPrecio_Mayorista(precioMayParam);
             m.setNombreMarca(marcaParam);
-            pr.setnMarca(marcaParam);
+            pr.setNmarca(marcaParam);
           //  pr.setUrl(imagenParam);
             
             DbConnection conn = new DbConnection();

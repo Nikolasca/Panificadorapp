@@ -1,7 +1,7 @@
 <%-- 
-    Document   : porfin
-    Created on : May 18, 2018, 9:28:14 PM
-    Author     : nicolasmoreno
+    Document   : detalles
+    Created on : 18/05/2018, 11:14:54 PM
+    Author     : Nikolas
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

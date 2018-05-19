@@ -18,6 +18,7 @@
                         <li><a href="/Panificadorapp/catalogo">Catalogo</a></li>
                         <li><a href="#">Venta Nicolas</a></li>
                         <li><a href="#">Perfíl</a></li>
+                        <li><a href="/Panificadorapp/empleado.jsp">Registrar Producto</a></li>
                     </ul>
 
                 </nav>
@@ -28,6 +29,8 @@
                 <h1>Bienvenido ${usuario.nombre}</h1> 
                 <p>Email: ${usuario.email}</p>
                 <p>Teléfono: ${usuario.telefono}</p>
+                
+
             </div>
         </div>
     </body>

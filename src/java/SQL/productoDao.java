@@ -42,8 +42,8 @@ public class productoDao {
             System.out.println(p.getNombreproducto());
             ps.setString(1, p.getNombreproducto());
             ps.setInt(2,0);
-            System.out.println(p.getnMarca());
-            ps.setString(3, p.getnMarca());
+            System.out.println(p.getNmarca());
+            ps.setString(3, p.getNmarca());
             psm.executeUpdate();
             pspre.executeUpdate();
             ps.executeUpdate();
@@ -65,7 +65,7 @@ public class productoDao {
             while (rs.next()) {
                 produ = new Producto(rs.getInt("idproducto"));
                 produ.setNombreProducto(rs.getString("nombreProducto"));
-                produ.setnMarca(rs.getString("nombreMarca"));
+                produ.setNmarca(rs.getString("nombreMarca"));
                 
 
                 list.add(produ);

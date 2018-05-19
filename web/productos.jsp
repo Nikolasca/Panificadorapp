@@ -34,6 +34,11 @@
                     <div class="producto_info">
                         <p><span${producto.nombreproducto}</p>  
                         <p>${producto.nmarca}</p>
+                        <form action = "ProductDetail" method="get">
+                            <input type="hidden" name="nombrep" value=${producto.nombreproducto}><br>
+                        <button type="submit">Comprar</button>
+                        </form>
+                         <button type="button">Más Info</button>
                      
                         
                     </div>
