@@ -23,35 +23,32 @@
             </div>
         </header>
         <div class="principal">
+            <p>${message}</p>
             <div formulario>
-                <form action = "SignUpEmpleado" method="post">
+                <form action = "registroempleado" method="post">
                     <div class="campo">
-                        <label for="nombreempresa">Nombre de la empresa</label>
-                        <input class="campos" name="nombreempresa" />
+                        <label for="nombreempresa">Nombre</label>
+                        <input class="campos" name="nombre" />
                     </div>
                     <div class="campo">
-                        <label for="nombreempresa">Teléfono de la empresa</label>
-                        <input class="campos" name="telefonoempresa"/>
+                        <label for="nombreempresa">Teléfono</label>
+                        <input class="campos" name="telefono"/>
                     </div>
                     <div class="campo">
-                        <label for="nombreempresa">Nombre de persona de contacto</label>
-                        <input class="campos" name="nombrepersonacontacto"/>
+                        <label for="nombreempresa">Email</label>
+                        <input class="campos" name="email"/>
                     </div>
                     <div class="campo">
-                        <label for="nombreempresa">Apellido persona de contacto</label>
-                        <input class="campos" name="apellidopersonacontacto"/>
+                        <label for="nombreempresa">cc</label>
+                        <input class="campos" name="cc"/>
                     </div>
                     <div class="campo">
-                        <label for="nombreempresa">Teléfono persona de contacto </label>
-                        <input class="campos" name="telefonopersonacontacto"/>
+                        <label for="nombreempresa">username</label>
+                        <input class="campos" name="username"/>
                     </div>
                     <div class="campo">
-                        <label for="nombreempresa">Email persona contacto</label>
-                        <input class="campos" name="emailpersonacontacto"/>
-                    </div>
-                    <div class="campo">
-                        <label for="nombreempresa">Documneto persona de contacto</label>
-                        <input class="campos" name="documentopersonacontacto"/>
+                        <label for="nombreempresa">Password</label>
+                        <input class="campos" name="password"/>
                     </div>
                     <input id="boton1" type="submit" value="Sign In"/>
                 </form>  

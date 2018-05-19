@@ -18,10 +18,10 @@ import java.sql.SQLException;
 public class Conexion {
      public Connection conectar (){
     Connection con =null;
-    String url = "jdbc:mysql://localhost:3306/panificadora";
+    String url = "jdbc:mysql://localhost:3306/panificadorapp";
     try {
     Class.forName("com.mysql.jdbc.Driver");
-    con = DriverManager.getConnection(url,"root","root");
+    con = DriverManager.getConnection(url,"root","root1234");
     System.out.print("Conexión establecida como root");
 
  }

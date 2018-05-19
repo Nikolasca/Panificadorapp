@@ -38,6 +38,7 @@
                             <input type="hidden" name="nombrep" value=${producto.nombreproducto}><br>
                         <button type="submit">Comprar</button>
                         </form>
+                        <a class="btn" href="adimin?action=eliminar">Eliminar</a>
                          <button type="button">Más Info</button>
                      
                         

@@ -17,8 +17,8 @@ public class Cliente extends Usuario {
    private int IdPersonaContacto;
    private boolean Estado;
 
-    public Cliente(String Nombre,  String Telefono, String CC, int idpersonacontacto) {
-        super(Nombre, Telefono, CC);
+    public Cliente(String Nombre,  String Telefono,String Email, String CC, int idpersonacontacto) {
+        super(Nombre, Telefono, CC,Email);
         IdPersonaContacto = idpersonacontacto;
         
     }

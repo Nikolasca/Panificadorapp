@@ -18,7 +18,7 @@ public class PersonaContacto extends Usuario {
    private int IdPersonaContacto;
    private boolean estado;
     public PersonaContacto(String Nombre,  String Telefono, String Email, String CC) {
-        super(Nombre,  Telefono, Email, CC);
+        super(Nombre, Telefono, Email, CC);
     }
 public void AñadirPersonaContacto(PersonaContacto cliente) {
         Conexion con = new Conexion();

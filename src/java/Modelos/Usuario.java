@@ -10,65 +10,74 @@ package Modelos;
  * @author Nikolas
  */
 public class Usuario {
-    private String Nombre;
-    private String Telefono;
-    private String Email;
-    private String CC;
+    private int id;
+    private String username;
+    private String password;
+    private String perfil;
+    private String estatus="activo";
 
-    public Usuario(String Nombre, String Telefono, String Email, String CC) {
-        this.Nombre = Nombre;
-        this.Telefono = Telefono;
-        this.Email = Email;
-        this.CC = CC;
+    public Usuario(int id) {
+        this.id = id;
     }
 
-    public Usuario(String Nombre, String Telefono, String Email) {
-        this.Nombre = Nombre;
-        this.Telefono = Telefono;
-        this.Email = Email;
+    public Usuario() {
     }
 
-    public Usuario(String Nombre) {
-        this.Nombre = Nombre;
+
+    public Usuario(String username, String password, String perfil,String estatus) {
+        this.username = username;
+        this.password = password;
+        this.perfil = perfil;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", username=" + username + ", password=" + password + ", perfil=" + perfil + ", estatus=" + estatus + '}';
+    }
+
     
 
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public Usuario(String Nombre, String Telefono) {
-        this.Nombre = Nombre;
-        this.Telefono = Telefono;
-    }
-
-
-    public String getTelefono() {
-        return Telefono;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public String getCC() {
-        return CC;
-    }
-
-    public void setCC(String CC) {
-        this.CC = CC;
-    }
+   
     
 }

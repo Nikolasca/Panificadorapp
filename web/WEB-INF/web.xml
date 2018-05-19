@@ -16,6 +16,10 @@
         <servlet-name>ProductDetail</servlet-name>
         <servlet-class>Servlets.ProductDetail</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminController</servlet-name>
+        <servlet-class>Servlets.AdminController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
@@ -40,6 +44,10 @@
     <servlet-mapping>
         <servlet-name>ProductDetail</servlet-name>
         <url-pattern>/ProductDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminController</servlet-name>
+        <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

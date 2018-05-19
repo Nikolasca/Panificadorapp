@@ -20,9 +20,10 @@ and open the template in the editor.
             <div class="info">
                 <div class="filtro"></div>
             </div>
+            <p>${message}</p>
             <div class="formulario">
                 <h1>Registrar producto</h1>
-                <form action = "LogIn" method="get" class="form">
+                <form method="post" class="form" action="admin">
                     <input type="text" class="campos" name="username" placeholder="Usuario"/>
                     <input type="text" class="campos" name="password" placeholder="Contraseña"/>
                     <input type="submit" id="boton1" value="Log in" class="btn"/>
