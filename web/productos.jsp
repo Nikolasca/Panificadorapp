@@ -36,6 +36,10 @@
                         <p>${producto.nmarca}</p>
                         <form action = "ProductDetail" method="get">
                             <input type="hidden" name="nombrep" value=${producto.nombreproducto}><br>
+                             <input type="hidden" name="marcap" value=${producto.nmarca}><br>
+                             <input type="hidden" name="idp" value=${producto.idproducto}><br>
+                             <input type="hidden" name="preciomay" value=${producto.preciomayorista}><br>
+                             <input type="hidden" name="preciomin" value=${producto.preciominorista}><br>
                         <button type="submit">Comprar</button>
                         </form>
                          <button type="button">Más Info</button>

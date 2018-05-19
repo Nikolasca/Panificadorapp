@@ -42,8 +42,8 @@ public class productoController extends HttpServlet {
             Marca m=new Marca(0);
             Producto pr = new Producto(0);
             pr.setNombreProducto(nombreParam);
-            pr.setPrecio_Minorista(precioMinParam);
-            pr.setPrecio_Mayorista(precioMayParam);
+            pr.setPreciominorista(precioMinParam);
+            pr.setPreciomayorista(precioMayParam);
             m.setNombreMarca(marcaParam);
             pr.setNmarca(marcaParam);
           //  pr.setUrl(imagenParam);

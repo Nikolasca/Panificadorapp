@@ -21,7 +21,7 @@ and open the template in the editor.
                 <div class="filtro"></div>
             </div>
             <div class="formulario">
-                <h1>Registrar producto</h1>
+                <h1>Iniciar sesión Empleado</h1>
                 <form action = "LogIn" method="get" class="form">
                     <input type="text" class="campos" name="username" placeholder="Usuario"/>
                     <input type="text" class="campos" name="password" placeholder="Contraseña"/>
