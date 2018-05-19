@@ -33,6 +33,9 @@
                     </div>
                     <div class="producto_info">
                         <p><span${producto.nombreproducto}</p>  
+                         <p>${producto.idproducto}</p>
+                        <p>${producto.nmarca}</p>
+                     
                         
                     </div>
                     
