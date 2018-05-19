@@ -15,7 +15,7 @@
                 <nav class="nav_principal">
                     <ul>
                         <li><a href="empleado.jsp">Registrar producto</a></li>
-                        <li><a href="#">Catalogo</a></li>
+                        <li><a href="/Panificadorapp/catalogo">Catalogo</a></li>
                         <li><a href="#">Venta</a></li>
                         <li><a href="#">Perfíl</a></li>
                     </ul>
