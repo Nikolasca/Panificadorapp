@@ -26,9 +26,8 @@
         </header>
         <div class="principal">
             <div class="perfil">
-                <h1>Bienvenido ${usuario.nombre}</h1> 
-                <p>Email: ${usuario.email}</p>
-                <p>Teléfono: ${usuario.telefono}</p>
+                <h1>Bienvenido ${usuario.username}</h1> 
+                
                 
 
             </div>
