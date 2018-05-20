@@ -28,7 +28,7 @@ and open the template in the editor.
                     <input type="text" class="campos" name="password" placeholder="Contraseña"/>
                     <input type="submit" id="boton1" value="Log in" class="btn"/>
                     <a href="/check.html" class="link">¿Olvidó su contraseña?</a>
-                    <a href="/Panificadorapp/signup.html" class="link">Registrarse <a/>
+                    <a href="/Panificadorapp/registro.jsp" class="link">Registrarse <a/>
                 </form>
             </div>
         </div>

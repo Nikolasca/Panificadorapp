@@ -15,7 +15,7 @@
                 <nav class="nav_principal">
                     <ul>
                         <li><a href="empleado.jsp">Registrar producto</a></li>
-                        <li><a href="#">Catalogo</a></li>
+                        <li><a href="admin?action=crear">Catalogo</a></li>
                         <li><a href="#">Venta</a></li>
                         <li><a href="#">Perfíl</a></li>
                     </ul>
@@ -25,31 +25,35 @@
         </header>
         <div class="principal">
             <h1>Catalogo</h1>
+            <p>${message}</p>
             <div class="tabla">
                 <c:forEach items="${productos}" var="producto" varStatus="status">
-                <div class="producto">
-                    <div class="producto_img">
-                        <img src="img/lafina.png">
+                    <div class="producto">
+                        <div class="producto_img">
+                            <img src="img/lafina.png">
+                        </div>
+                        <div class="producto_info">
+                            <p><span${producto.nombreproducto}</p>  
+                            <p>${producto.nmarca}</p>
+                            <p>${producto.idproducto}</p>
+                            <form action = "ProductDetail" method="get">
+                                <input type="hidden" name="nombrep" value=${producto.nombreproducto}><br>
+                                <input type="hidden" name="marcap" value=${producto.nmarca}><br>
+                                <input type="hidden" name="idp" value=${producto.idproducto}><br>
+                                <input type="hidden" name="preciomay" value=${producto.preciomayorista}><br>
+                                <input type="hidden" name="preciomin" value=${producto.preciominorista}><br>
+                                <button type="submit">Comprar</button>
+                            </form>
+                            <c:if test="${usuario.id >0}">    
+                                <a class="btn" href="admin?action=eliminar&idProducto=${producto.idproducto}" role="button">Eliminar</a>
+                            </c:if>
+                            <button type="button">Más Info</button>
+
+
+                        </div>
+
                     </div>
-                    <div class="producto_info">
-                        <p><span${producto.nombreproducto}</p>  
-                        <p>${producto.nmarca}</p>
-                        <form action = "ProductDetail" method="get">
-                            <input type="hidden" name="nombrep" value=${producto.nombreproducto}><br>
-                             <input type="hidden" name="marcap" value=${producto.nmarca}><br>
-                             <input type="hidden" name="idp" value=${producto.idproducto}><br>
-                             <input type="hidden" name="preciomay" value=${producto.preciomayorista}><br>
-                             <input type="hidden" name="preciomin" value=${producto.preciominorista}><br>
-                        <button type="submit">Comprar</button>
-                        </form>
-                        <a class="btn" href="adimin?action=eliminar">Eliminar</a>
-                         <button type="button">Más Info</button>
-                     
-                        
-                    </div>
-                    
-                </div>
-            </c:forEach>
+                </c:forEach>
             </div>
         </div>
     </body>

@@ -3,6 +3,7 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://file.myfontastic.com/B8bxDJcDnx8MCD8qdH35BD/icons.css" rel="stylesheet">
         <link rel="stylesheet" href="css/registro.css">
     </head>
     <body>
@@ -23,34 +24,36 @@
             </div>
         </header>
         <div class="principal">
-            <p>${message}</p>
-            <div formulario>
-                <form action = "registroempleado" method="post">
+            
+            <p class="message">${message}</p>
+            <div class="formulario">
+                <h1><span class="icon-user"></span>Registrate</h1>
+                <form action = "registroempleado" method="post" class="form">
                     <div class="campo">
                         <label for="nombreempresa">Nombre</label>
-                        <input class="campos" name="nombre" />
+                        <input type="text" class="campos" name="nombre" required="" />
                     </div>
                     <div class="campo">
                         <label for="nombreempresa">Teléfono</label>
-                        <input class="campos" name="telefono"/>
+                        <input type="text" class="campos" name="telefono" required=""/>
                     </div>
                     <div class="campo">
                         <label for="nombreempresa">Email</label>
-                        <input class="campos" name="email"/>
+                        <input type="email" class="campos" name="email" required=""/>
                     </div>
                     <div class="campo">
                         <label for="nombreempresa">cc</label>
-                        <input class="campos" name="cc"/>
+                        <input type="text" class="campos" name="cc" required=""/>
                     </div>
                     <div class="campo">
                         <label for="nombreempresa">username</label>
-                        <input class="campos" name="username"/>
+                        <input type="text" class="campos" name="username" required=""/>
                     </div>
                     <div class="campo">
                         <label for="nombreempresa">Password</label>
-                        <input class="campos" name="password"/>
+                        <input type="password" class="campos" name="password" required=""/>
                     </div>
-                    <input id="boton1" type="submit" value="Sign In"/>
+                    <input id="boton1" type="submit" class="btn" value="Registrarse"/>
                 </form>  
             </div>
         </div>

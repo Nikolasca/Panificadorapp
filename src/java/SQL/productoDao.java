@@ -83,9 +83,14 @@ public class productoDao {
 
     public int delete(int idproducto) {
         try {
-            String sql = "delete form producto where idproducto=?";
+            String psql = "delete from facturadetalle where producto_idproducto=?";
+            String sql = "delete from producto where idproducto=?";
             PreparedStatement ps = conn.getConnection().prepareStatement(sql);
+            PreparedStatement pps = conn.getConnection().prepareStatement(psql);
+            System.out.println(idproducto);
+            pps.setInt(1, idproducto);
             ps.setInt(1, idproducto);
+            pps.executeUpdate();
             int rows = ps.executeUpdate();
             return rows;
         } catch (SQLException ex) {

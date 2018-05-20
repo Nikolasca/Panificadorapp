@@ -66,7 +66,7 @@ public class registroEmpleadoController extends HttpServlet {
         conn.disconnect();
         RequestDispatcher rd;
         request.setAttribute("message", msg);
-        rd = request.getRequestDispatcher("/registro.jsp");
+        rd = request.getRequestDispatcher("/index.jsp");
         rd.forward(request, response);
 
     }
