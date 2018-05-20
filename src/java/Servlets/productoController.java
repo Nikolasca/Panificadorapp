@@ -8,18 +8,24 @@ package Servlets;
 import SQL.DbConnection;
 import SQL.productoDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Modelos.Marca;
 
 import Modelos.Producto;
-
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Part;
+@WebServlet("/upload")
+@MultipartConfig
 /**
  *
  * @author nicolasmoreno
@@ -35,7 +41,11 @@ public class productoController extends HttpServlet {
             int precioMinParam = Integer.parseInt(request.getParameter("preciomi"));
             int precioMayParam = Integer.parseInt(request.getParameter("precioma"));
             String marcaParam = request.getParameter("marca");
-            String imagenParam = request.getParameter("imagen");
+            Part filePart = request.getPart("imagen");
+            String fileName =  Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+           // InputStream fileContent= filePart.getInputStream();
+            System.out.print(fileName);
+            
             
            
            // Precio p = new Precio(0);
@@ -46,6 +56,16 @@ public class productoController extends HttpServlet {
             pr.setPreciomayorista(precioMayParam);
             m.setNombreMarca(marcaParam);
             pr.setNmarca(marcaParam);
+            
+          //  String path="/archivos/";
+            String path="/Users/Nikolas/Documents/NetBeansProjects/Panificadorapp/web/USER-PICS/";
+            File uploads = new File(path);
+            uploads.mkdirs();
+            File file = File.createTempFile("cod"+"1203"+"-","-"+fileName,uploads);
+            try(InputStream input = filePart.getInputStream()){
+            Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            }
+           
           //  pr.setUrl(imagenParam);
             
             DbConnection conn = new DbConnection();
