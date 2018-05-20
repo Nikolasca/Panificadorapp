@@ -9,7 +9,8 @@ package Modelos;
  *
  * @author Nikolas
  */
-public class Producto {
+import java.io.Serializable;
+public class Producto implements Serializable {
     private int Idproducto;
     private String Nombreproducto;
     private int Preciomayorista;
@@ -23,6 +24,19 @@ public class Producto {
         this.Preciominorista = Precio_Minorista;
         this.IdMarca = IdMarca;
     }
+
+    public Producto(int Idproducto, String Nombreproducto, int Preciomayorista, int Preciominorista, String Nmarca) {
+        this.Idproducto = Idproducto;
+        this.Nombreproducto = Nombreproducto;
+        this.Preciomayorista = Preciomayorista;
+        this.Preciominorista = Preciominorista;
+        this.Nmarca = Nmarca;
+    }
+
+    public Producto() {
+    }
+    
+    
 public Producto (int id){
 this.Idproducto = id;
 }
@@ -72,6 +86,11 @@ this.Idproducto = id;
 
     public void setIdMarca(int IdMarca) {
         this.IdMarca = IdMarca;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "Idproducto=" + Idproducto + ", Nombreproducto=" + Nombreproducto + ", Preciomayorista=" + Preciomayorista + ", Preciominorista=" + Preciominorista + ", IdMarca=" + IdMarca + ", Nmarca=" + Nmarca + '}';
     }
     
             

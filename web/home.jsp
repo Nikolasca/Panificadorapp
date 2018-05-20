@@ -18,6 +18,7 @@
                         <li><a href="/Panificadorapp/catalogo">Catalogo</a></li>
                         <li><a href="#"></a></li>
                         <li><a href="#">Perfíl</a></li>
+                         <li><a href="Carrito.jsp">Carrito de Compras</a></li>
                        
                     </ul>
 
