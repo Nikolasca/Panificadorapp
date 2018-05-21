@@ -20,6 +20,9 @@
     <body>
         <h1></h1>
         <div class="producto_info">
+            <div class="producto_img">
+                            <img src="USER-PICS/${producto.rutaimg}"/>
+                        </div>
                         <p>Nombre del producto: ${producto.nombreproducto}</p>  
                         <p>Marca: ${producto.nmarca}</p>
                         <p>Precio para mayoristas: ${producto.preciomayorista}.000  </p>

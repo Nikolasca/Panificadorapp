@@ -11,12 +11,12 @@
     </header>
         <div class="formulario">
             <h1>Registrar producto</h1>
-            <form action="productoController" id="iniciar" method="post">
+            <form action="productoController" id="iniciar" method="post" enctype="multipart/form-data">
                 <input type="text" name="nombre" placeholder="Nombre">
                 <input type="text" name="preciomi" placeholder="precio Minorista">
                 <input type="text" name="precioma" placeholder="precio Mayorista">
                 <input type="text" name="marca" placeholder="Marca">
-                <input type="file" name="imagen">
+                <input type="file" name="imagen" >
                 <input type="submit">
             </form>
         </div>

@@ -21,6 +21,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.regex.Pattern;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Part;
@@ -43,8 +44,9 @@ public class productoController extends HttpServlet {
             String marcaParam = request.getParameter("marca");
             Part filePart = request.getPart("imagen");
             String fileName =  Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+            
            // InputStream fileContent= filePart.getInputStream();
-            System.out.print(fileName);
+         //  System.out.print(fileName);
             
             
            
@@ -61,16 +63,26 @@ public class productoController extends HttpServlet {
             String path="/Users/Nikolas/Documents/NetBeansProjects/Panificadorapp/web/USER-PICS/";
             File uploads = new File(path);
             uploads.mkdirs();
-            File file = File.createTempFile("cod"+"1203"+"-","-"+fileName,uploads);
+            File file = File.createTempFile("cod"+"1203"+"XX","XX"+fileName,uploads);
+            
             try(InputStream input = filePart.getInputStream()){
             Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
             }
+        
+          String[] Parts = (file.getPath().split("XX"));
+          //System.out.print(file.getPath());
+          
+          String ruta =("cod1203XX"+Parts[1]+"XX"+fileName);
+          pr.setRutaimg(ruta);
+         
            
-          //  pr.setUrl(imagenParam);
-            
-            DbConnection conn = new DbConnection();
+         
+            System.out.print(pr.getRutaimg()); 
+          DbConnection conn = new DbConnection();
             productoDao pd = new productoDao(conn);
-            boolean status = pd.insert(pr,m);
+            pd.insertProducto(pr, m);
+            
+           /*  boolean status = pd.insert(pr,m);
             
             String msg="";
             if (status) {
@@ -80,7 +92,8 @@ public class productoController extends HttpServlet {
                 msg="Ocurrio un error";
                 System.out.println(msg);
             }
-            conn.disconnect();
+            conn.disconnect();*/
+           String msg = "tal vez salio bien";
             RequestDispatcher rd;
             request.setAttribute("Message", msg);
             rd = request.getRequestDispatcher("/mensaje.jsp");

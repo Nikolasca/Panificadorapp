@@ -27,7 +27,32 @@ public class productoDao {
     public productoDao(DbConnection conn) {
         this.conn = conn;
     }
+public void insertProducto (Producto p, Marca m){
+    String insertmarca = "insert into marca (nombreMarca) values (?)";
+    String insertprecio = "insert into precio (preciominorista, preciomayorista) values (?,?)";
+    String insertpro = "insert into producto (nombreProducto,precio_idprecio,marca_idmarca,rutaimg) values (?,(select idprecio from precio ORDER BY idprecio  DESC LIMIT 1),(select idmarca from marca ORDER BY idmarca  DESC LIMIT 1),?)";
+try {
+            PreparedStatement psm = conn.getConnection().prepareStatement(insertmarca);
+            PreparedStatement pspre = conn.getConnection().prepareStatement(insertprecio);
+            PreparedStatement ps = conn.getConnection().prepareStatement(insertpro);
+            psm.setString(1, m.getNombreMarca());
+            pspre.setInt(1, p.getPreciominorista());
+            pspre.setInt(2, p.getPreciomayorista());
+            System.out.println(p.getNombreproducto());
+            ps.setString(1, p.getNombreproducto());
+            ps.setString(2, p.getRutaimg());
+            System.out.println(p.getNmarca());
+            psm.executeUpdate();
+            pspre.executeUpdate();
+            ps.executeUpdate();
+           System.out.print("Todo bonito");
+        } catch (SQLException ex) {
+            System.out.print(ex);
+        
+            
+        }
 
+}
     public boolean insert(Producto p, Marca m) {
         String sqlm = "insert into marca (nombreMarca) values(?)";
         String sqlpre = "insert into precio (preciominorista,preciomayorista) values(?,?)";
@@ -37,8 +62,8 @@ public class productoDao {
             PreparedStatement pspre = conn.getConnection().prepareStatement(sqlpre);
             PreparedStatement ps = conn.getConnection().prepareStatement(sqlp);
             psm.setString(1, m.getNombreMarca());
-            pspre.setInt(1, 0);
-            pspre.setInt(2, 0);
+            pspre.setInt(1, p.getPreciominorista());
+            pspre.setInt(2, p.getPreciomayorista());
             System.out.println(p.getNombreproducto());
             ps.setString(1, p.getNombreproducto());
             ps.setInt(2,0);
@@ -49,14 +74,16 @@ public class productoDao {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
+            System.out.print(ex);
             return false;
+            
         }
     }
 
     public List<Producto> getProductos() {
 
         try {
-            String sql = "select idproducto,nombreProducto,nombreMarca,preciominorista,preciomayorista from marca inner join producto on marca.idmarca=marca_idmarca inner join precio on precio.idprecio=precio_idprecio";
+            String sql = "select idproducto,nombreProducto,nombreMarca,preciominorista,preciomayorista,rutaimg from marca inner join producto on marca.idmarca=marca_idmarca inner join precio on precio.idprecio=precio_idprecio";
             PreparedStatement ps = conn.getConnection().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             List<Producto> list = new LinkedList<>();
@@ -68,6 +95,7 @@ public class productoDao {
                 produ.setNmarca(rs.getString("nombreMarca"));
                 produ.setPreciominorista(rs.getInt("preciominorista"));
                 produ.setPreciomayorista(rs.getInt("preciomayorista"));
+                produ.setRutaimg(rs.getString("rutaimg"));
                 
 
                 list.add(produ);

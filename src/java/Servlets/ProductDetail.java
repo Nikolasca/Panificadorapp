@@ -37,13 +37,14 @@ public class ProductDetail extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+            String imgurl = request.getParameter("rutaimg");
             String Nombre = request.getParameter("nombrep");
             String Marca = request.getParameter("marcap");
             int ID = Integer.parseInt(request.getParameter("idp"));
             int preciomin = Integer.parseInt(request.getParameter("preciomin"));
             int preciomay = Integer.parseInt(request.getParameter("preciomay"));
                 Producto producto = new Producto(ID,Nombre,preciomay,preciomin,Marca);
+                producto.setRutaimg(imgurl);
             RequestDispatcher rd;
         DbConnection conn = new DbConnection();
        
