@@ -102,10 +102,11 @@ private void anadircarrito(HttpServletRequest request, HttpServletResponse respo
             List <Tipos> metodosen = pd.getTipoEntrega();
             System.out.print("ASDSADSADS");
    
-   
+  // ArrayList <Producto> comprados = new ArrayList(); 
    session.setAttribute("carritocompras", Lista);
    session.setAttribute("metodo", metodos);
    session.setAttribute("metodoen", metodosen);
+   
    
    out = response.getWriter();
    out.print("registrado correctamente!!"+producto);

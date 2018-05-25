@@ -5,8 +5,18 @@
  */
 package Servlets;
 
+import Modelos.Cliente;
+import Modelos.DetalleFactura;
+import Modelos.Empleado;
+import Modelos.Factura;
+import Modelos.Producto;
+import Modelos.Venta;
+import SQL.CompraDao;
+import SQL.DbConnection;
+import SQL.productoDao;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,18 +40,50 @@ public class CompraController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CompraController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CompraController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        String metodopago = request.getParameter("metodopago");
+         String metodoenv = request.getParameter("metodoentrega");
+       DbConnection conn = new DbConnection();
+       
+        CompraDao pd = new CompraDao(conn);
+    int codigotipopago =    pd.getProductos("tipopago", "idtipopago", "nombretipopago", ((char)34+metodopago+(char)34));
+    int codigotippenv =    pd.getProductos("tipoentrega", "idtipoentrega", "nombretipoentrega", ((char)34+metodoenv+(char)34));
+      
+       
+       
+        String obs = "Esto es un observación";
+        ArrayList<Producto> comprados;
+        comprados = (ArrayList<Producto>) request.getSession().getAttribute("comprados");
+       Empleado e = new Empleado();
+       DetalleFactura fd = new DetalleFactura();
+       Factura f = new Factura();
+       Venta v = new Venta();
+       Cliente c = new Cliente();
+       int cantidad = 0;
+      for (int i = 0;i<comprados.size();i++){ 
+          
+           cantidad = Integer.parseInt(request.getParameter("cantidad"+comprados.get(i).getIdproducto()));
+         //  System.out.print(cantidad);
+          v.setIdTipoEntrega(codigotippenv);
+          v.setIdTipoPago(codigotipopago);
+       c.setId(5);
+       e.setId(11);
+      f.setPreciototal(comprados.get(i).getPreciominorista()*cantidad);
+      fd.setCantidadfactura(cantidad);
+      v.setObservacionVenta(obs);
+      
+           
+            pd.insertCompra(comprados.get(i), e, fd, f, v,c);
+            
+      
+      }
+      RequestDispatcher rd;
+            rd = request.getRequestDispatcher("/CompraRealizada.jsp");
+            rd.forward(request, response);
+        
+        
+       
+               
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
