@@ -12,6 +12,7 @@ package Modelos;
 public class Tipos {
     private int IdTipo;
     private  String Descripcion;
+    private String Nombretipo;
 
     public Tipos(int IdTipo, String Descripcion) {
         this.IdTipo = IdTipo;
@@ -32,6 +33,14 @@ public class Tipos {
 
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
+    }
+
+    public String getNombretipo() {
+        return Nombretipo;
+    }
+
+    public void setNombretipo(String Nombretipo) {
+        this.Nombretipo = Nombretipo;
     }
     
 }
