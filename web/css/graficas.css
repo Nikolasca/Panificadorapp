@@ -1,0 +1,83 @@
+#myChart{
+    width: 500px !important;
+    height: 500px !important;
+}
+:root {
+    --principal:#15636D;
+    --amarillo:#FFD53A;
+    --texto:#53575A;
+    --borde:#DFE0E0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* --- HEADER --- */
+
+header{
+    width: 100%;
+    background-color: var(--principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header img{
+    width: 250px;
+    height: 60px;
+    margin: 1em;
+}
+.logo{
+ width: 100%;
+ text-align: center;
+}
+.nav_principal ul{
+    display: flex;
+    width: 100%;
+    
+}
+.nav_principal ul li{
+    padding: 1em;
+    margin: 0 1em;
+    list-style: none;
+}
+.nav_principal ul li a{
+    color:var(--amarillo);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+.principal{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.general{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.general-item-cuadro{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.especifico{
+    width: 80%;
+    margin: 0 auto;
+}
+.especifico-cuadro{
+    width: 100%;
+    border: 1px solid red;
+}
+.especifico-item{
+    padding: 2em;
+    background-color: blue;
+}
