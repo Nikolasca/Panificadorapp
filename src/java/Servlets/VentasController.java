@@ -6,9 +6,14 @@
 package Servlets;
 
 import Modelos.Producto;
+import Modelos.Tipos;
+import SQL.DbConnection;
+import SQL.TipoDao;
+import SQL.productoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,22 +42,31 @@ public class VentasController extends HttpServlet {
     PrintWriter out;
     protected void metget(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        
+       url = request.getServletPath();  
+        if(url.equals("/eliminarproducto")){
+           eliminar(request,response);
+       }
     }
+    
+    
     
     protected void metpost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    anadircarrito(request,response);
-      // url = request.getServletPath();
-      // if(url.equals("/VentasController")){
-             
-            
+    
+       url = request.getServletPath();
+       if(url.equals("/VentasController")){
+             anadircarrito(request,response);
           
-            
-     //  }
-       
+       }
         
+        
+    }
+    private void eliminar(HttpServletRequest request, HttpServletResponse response) throws IOException{
+   session = request.getSession(false);
+   Lista = (ArrayList<Producto>) session.getAttribute("carritocompras");
+   Lista.remove(Integer.parseInt(request.getParameter("productoid")));
+   session.setAttribute("carritocompras", Lista);
+   response.sendRedirect("Carrito.jsp");
     }
 private void anadircarrito(HttpServletRequest request, HttpServletResponse response) throws IOException{
    session = request.getSession(false);
@@ -82,9 +96,16 @@ private void anadircarrito(HttpServletRequest request, HttpServletResponse respo
    Lista.set(indice, producto);
    }
  
-
+    DbConnection conn = new DbConnection();
+            TipoDao pd = new TipoDao(conn);
+            List <Tipos> metodos = pd.getTipoPago();
+            List <Tipos> metodosen = pd.getTipoEntrega();
+            System.out.print("ASDSADSADS");
+   
    
    session.setAttribute("carritocompras", Lista);
+   session.setAttribute("metodo", metodos);
+   session.setAttribute("metodoen", metodosen);
    
    out = response.getWriter();
    out.print("registrado correctamente!!"+producto);
