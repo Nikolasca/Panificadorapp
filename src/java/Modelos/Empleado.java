@@ -25,6 +25,9 @@ public class Empleado extends Usuario {
         
     }
 
+    public Empleado() {
+    }
+
     public Empleado(int idempleado) {
         this.idempleado = idempleado;
     }

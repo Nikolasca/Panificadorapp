@@ -18,6 +18,7 @@ public class Producto implements Serializable {
     private int IdMarca;
     private String Nmarca;
     private String Rutaimg;
+    private int cantidadtotal;
 
     public Producto(String NombreProducto, int Precio_Mayorista, int Precio_Minorista, int IdMarca) {
         this.Nombreproducto = NombreProducto;
@@ -91,6 +92,14 @@ this.Idproducto = id;
 
     public int getIdMarca() {
         return IdMarca;
+    }
+
+    public int getCantidadtotal() {
+        return cantidadtotal;
+    }
+
+    public void setCantidadtotal(int cantidadtotal) {
+        this.cantidadtotal = cantidadtotal;
     }
 
     public void setIdMarca(int IdMarca) {

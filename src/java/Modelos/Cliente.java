@@ -25,6 +25,9 @@ public class Cliente extends Usuario {
         
     }
 
+    public Cliente() {
+    }
+
     public Cliente(int IdPersonaContacto, boolean Estado, String Nombre, String Telefono) {
         this.IdPersonaContacto = IdPersonaContacto;
         this.Estado = Estado;

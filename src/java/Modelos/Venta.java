@@ -25,6 +25,10 @@ public class Venta {
         this.IdTipoPago = IdTipoPago;
     }
 
+    public Venta() {
+         //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getIdVenta() {
         return IdVenta;
     }
